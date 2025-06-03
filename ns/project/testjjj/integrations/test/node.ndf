@@ -45,9 +45,8 @@
   <value name="retry_max">0</value>
   <value name="retry_interval">0</value>
   <record name="node_hints" javaclass="com.wm.util.Values">
-    <value name="createdBy">gsar</value>
-    <value name="createdDate">1748935674477</value>
-    <value name="lastModifiedDate">1748935674477</value>
+    <value name="lastModifiedBy">gsar</value>
+    <value name="lastModifiedDate">1748938185443</value>
     <value name="displayName">test</value>
     <value name="description"></value>
     <array name="appList" type="record" depth="1">
