@@ -7,3 +7,12 @@ packages:
   gitUrl: https://github.com/Gayathri-Saravanan-IBM
   gitUsername: Gayathri-Saravanan-IBM
   gitBranch: main
+services:
+- serviceName: project.testjjj.integrations:hhy
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+- serviceName: pub.date:getCurrentDate
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2062
