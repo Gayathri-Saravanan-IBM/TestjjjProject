@@ -7,12 +7,90 @@ packages:
   gitUrl: https://github.com/Gayathri-Saravanan-IBM
   gitUsername: Gayathri-Saravanan-IBM
   gitBranch: main
+- name: WmKafkaAdapter
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: licensed
 services:
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections:Kafka_18
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:Produce
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: project.testjjj.integrations:hhy
   packages:
   - name: TestjjjProject
     version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 - serviceName: pub.date:getCurrentDate
   packages:
   - name: WmPublic
     version: 11.1.0.0.2062
+- serviceName: project.testjjj.integrations:test
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+configurationVariables:
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.compressionType
+  : none
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.otherProperties
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaRegistryURL
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.serverList
+  : vmadptest02.southindia.cloudapp.azure.com:9441
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.kafkaVersion
+  : v11+
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaPkgName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.keySerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.partitionerClass
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.ackIndicator
+  : "0"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.batchSize
+  : "16384"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.sendBufferSize
+  : "131072"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaRegistryCredentials
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.clientID
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.valueSerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.securityProtocol
+  : None
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionEnabled
+  : "true"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.trustStoreAlias
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.maxRetry
+  : "2147483647"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.kerberosServiceName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.keyStoreAlias
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.requestTimeOut
+  : "30000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.jaasConfig
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionManagerSettings.poolable
+  : "false"
