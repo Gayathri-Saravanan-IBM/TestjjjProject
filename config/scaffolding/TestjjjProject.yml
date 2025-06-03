@@ -20,7 +20,31 @@ services:
     version: 9.6.0.0.26
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
-- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:Produce
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections:Origin_CRT_Consumer
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections:Origin_CRT_Producer
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:Origin_CRT_Producer
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
+- serviceName: project.testjjj.integrations:Origin_CRT_Services
   packages:
   - name: TestjjjProject
     version: "1.0"
@@ -48,50 +72,176 @@ services:
     version: 9.6.0.0.26
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+- serviceName: project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.operations.actions:Produce
+  packages:
+  - name: TestjjjProject
+    version: "1.0"
+  - name: WmKafkaAdapter
+    version: 9.6.0.0.26
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 configurationVariables:
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.poolable
+  : "false"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionEnabled
+  : "false"
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.compressionType
   : none
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.kafkaVersion
+  : v11+
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.jaasConfig
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.serverList
+  : vmadptest02.southindia.cloudapp.azure.com:9441
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.ackIndicator
+  : "0"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionEnabled
+  : "true"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.kerberosServiceName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.keySerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.keyStoreAlias
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.schemaPkgName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.compressionType
+  : none
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.deserializerErrorHandler
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.sendBufferSize
+  : "131072"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.schemaRegistryCredentials
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.poolable
+  : "true"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.autoCommitInterval
+  : "5000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.requestTimeOut
+  : "30000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.clientID
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.startupRetryCount
+  : "0"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.valueSerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.batchSize
+  : "16384"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.schemaRegistryURL
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionEnabled
+  : "false"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.trustStoreAlias
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.maxRetry
+  : "2147483647"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.startupRetryCount
+  : "0"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.schemaRegistryCredentials
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.jaasConfig
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.kerberosServiceName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.jaasConfig
+  : '******'
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.clientID
+  : origin-c1
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.otherProperties
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.startupBackoffSecs
+  : "10"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.maxRetry
+  : "2147483647"
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.otherProperties
   : ""
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaRegistryURL
   : ""
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.serverList
   : vmadptest02.southindia.cloudapp.azure.com:9441
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.kafkaVersion
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.schemaRegistryURL
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.kafkaVersion
   : v11+
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.keySerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaPkgName
   : ""
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.keySerializerClass
-  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.enableAutoCommit
+  : "true"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.trustStoreAlias
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.minimumPoolSize
+  : "1"
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.partitionerClass
   : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.expireTimeout
+  : "1000"
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.ackIndicator
   : "0"
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.batchSize
   : "16384"
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.sendBufferSize
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.valueDeserializer
+  : org.apache.kafka.common.serialization.StringDeserializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.schemaPkgName
+  : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.valueSerializerClass
+  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.securityProtocol
+  : None
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.kafkaVersion
+  : v11+
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.seesionTimeOut
+  : "45000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.clientID
+  : origin-c1
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.groupId
+  : origin-g1
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.sendBufferSize
   : "131072"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.otherProperties
+  : ""
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.schemaRegistryCredentials
   : '******'
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.clientID
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.trustStoreAlias
   : ""
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.valueSerializerClass
-  : org.apache.kafka.common.serialization.StringSerializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.keyDeserializer
+  : org.apache.kafka.common.serialization.StringDeserializer
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.securityProtocol
+  : None
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.serverList
+  : vmadptest02.southindia.cloudapp.azure.com:9441
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.securityProtocol
   : None
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionEnabled
-  : "true"
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.trustStoreAlias
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.keyStoreAlias
   : ""
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.maxRetry
-  : "2147483647"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Producer.connectionSettings.partitionerClass
+  : ""
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.kerberosServiceName
   : ""
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.keyStoreAlias
   : ""
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionManagerSettings.expireTimeout
+  : "1000"
+  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Origin_CRT_Consumer.connectionSettings.autoOffsetReset
+  : earliest
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.requestTimeOut
   : "30000"
-  ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionSettings.jaasConfig
-  : '******'
   ? artConnection.TestjjjProject.project.testjjj.WmKafkaAdapter.com_wm_adapter_wmkafka_KafkaAdapter.connections.Kafka_18.connectionManagerSettings.poolable
   : "false"
